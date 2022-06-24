@@ -1,0 +1,86 @@
+<template>
+    <div id = '雷达图' :style = 'div_css'>
+      <t-divider>
+        Radar View
+      </t-divider>
+      <t-radio-group size = 'small'
+      id = '单选框2' variant="primary-filled" default-value="1">
+          <t-radio-button value="1">Social Network</t-radio-button>
+          <t-radio-button value="2">Business Base</t-radio-button>
+      </t-radio-group>
+      
+    </div>
+</template>
+
+<script>
+export default {
+  name: 'calendar',
+  props: {
+    //这两个属性从父组件继承
+    height:Number,
+    width:Number,
+    top:Number,
+    left:Number,
+  },
+  data(){
+    return {
+      
+    }
+  },
+  mounted(){
+
+  },
+  computed:{
+    div_css(){
+      //div的css属性从这里写
+      let div_height = this.height
+      let div_width = this.width
+      let div_border = '0px solid black'
+      let div_position = 'absolute'
+      let div_top = this.top //所有边距固定为10
+      let div_left = this.left
+
+      return  "position:" + div_position + ";" +
+              "height:" + div_height + "px;" +
+              "width:" + div_width + "px;" +
+              "border:" + div_border + ";" +
+              "left:" + div_left + "px;" +
+              "top:" + div_top + "px;" 
+              
+
+
+    }
+  },
+  methods:{
+
+  },
+  watch:{
+
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+
+#单选框2{
+  position:absolute;
+  left:20%;
+  top:90%;
+}
+
+</style>
