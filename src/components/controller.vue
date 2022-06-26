@@ -1,20 +1,20 @@
 <template>
     <div id = '控制台' :style = 'div_css'>
-      <t-divider>
+      <t-divider class = 'divider'>
         Console
       </t-divider>
-      <t-button class = '按钮' shape="round" theme="primary">
-        Demographics
+      <t-button v-for = '(d,i) in button_name'
+      :key = 'i'
+      :id = "'按钮' + (i+1)"
+      class = '按钮'
+      shape = 'round'
+      :theme="mode == d?'primary':'default'"
+      @click = 'mode = d'>
+      {{d}}
       </t-button>
-
-      <t-button class = '按钮' shape="round" theme="default">
-        Social Network
-      </t-button>
-
-      <t-button class = '按钮' shape="round" theme="default">
-        Business Base
-      </t-button>
-      <t-slider class = '滑块'/>
+     
+      <t-slider class = '滑块'
+      :marks='marks'/>
     </div>
 </template>
 
@@ -31,7 +31,9 @@ export default {
   },
   data(){
     return {
-      
+      button_name:['Demographics','Social Network','Business Base'],
+      mode:'Demographics',
+      marks :{'0':'min:0',100: 'max:100'},
     }
   },
   mounted(){
@@ -85,16 +87,32 @@ a {
 }
 
 .按钮{
-  
-  margin-left: 1%;
-  display: inline;
+  top:35%;
+}
+
+#按钮1{
+  position:absolute;
+  left:2%;
+}
+#按钮2{
+  position:absolute;
+  left:20%;
+}
+#按钮3{
+  position:absolute;
+  left:38%;
 }
 .滑块{
   position: absolute;
   width: 35%;
   left:60%;
-  top:50%;
+  top:40%;
  
+}
+
+.divider{
+  margin-top:0px;
+  margin-bottom:0px;
 }
 
 </style>

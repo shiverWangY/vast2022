@@ -1,6 +1,6 @@
 <template>
     <div id = '雷达图' :style = 'div_css'>
-      <t-divider>
+      <t-divider class = 'divider'>
         Radar View
       </t-divider>
       <t-radio-group size = 'small'
@@ -80,7 +80,12 @@ a {
 #单选框2{
   position:absolute;
   left:20%;
-  top:90%;
+  top:95%;
+}
+
+.divider{
+  margin-top:0px;
+  margin-bottom:0px;
 }
 
 </style>

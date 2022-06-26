@@ -1,6 +1,6 @@
 <template>
     <div id = '主视图' :style = 'div_css'>
-      <t-divider>
+      <t-divider class = 'divider'>
         Main View
       </t-divider>
       <t-radio-group id = '单选框' variant="primary-filled" default-value="1">
@@ -79,5 +79,9 @@ a {
   left:70%
 }
 
+.divider{
+  margin-top:0px;
+  margin-bottom:0px;
+}
 
 </style>

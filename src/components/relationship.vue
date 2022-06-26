@@ -1,6 +1,6 @@
 <template>
     <div id = '关系图' :style = 'div_css'>
-      <t-divider>
+      <t-divider class = 'divider'>
         Relationship View
       </t-divider>
       <t-radio-group size = 'small'
@@ -79,7 +79,11 @@ a {
 #单选框3{
   position:absolute;
   left:65%;
-  top:20%;
+  top:5%;
+}
+.divider{
+  margin-top:0px;
+  margin-bottom:0px;
 }
 
 

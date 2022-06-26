@@ -1,12 +1,13 @@
 <template>
     <div id = '日历视图' :style = 'div_css'>
       
-      <t-divider>
+      <t-divider class = 'divider'>
         Calendar
       </t-divider>
       <t-config-provider :global-config="globalConfig">
        <t-calendar id = '日历' 
-          theme="card" />
+          theme="card" 
+          :style = 'calendar_css'/>
       </t-config-provider>
     </div>
 </template>
@@ -117,9 +118,20 @@ export default {
               "border:" + div_border + ";" +
               "left:" + div_left + "px;" +
               "top:" + div_top + "px;" 
-              
-
-
+    },
+    calendar_css(){
+      let raw_width = 352
+      let raw_height = 368
+      let div_width = this.width
+      let div_height = this.height
+      
+      let new_height = div_height * 0.88
+      let ratio = new_height/raw_height
+      let new_width = raw_width * ratio
+      return 'transform:scale(' + [ratio,ratio] + ');' +
+             'position:absolute;' + 
+             "left:" + (-div_width + new_width)/2+ "px;" +
+             "top:" + (-div_height + new_height - 30)/2 + "px;" 
     }
   },
   methods:{
@@ -147,11 +159,9 @@ li {
 a {
   color: #42b983;
 }
-
-#日历{
-  
-  transform:scale(0.6,0.6)translate(-10%,-45%);
-
+.divider{
+  margin-top:0px;
+  margin-bottom:0px;
 }
 
 

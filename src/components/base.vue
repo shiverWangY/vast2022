@@ -1,6 +1,6 @@
 <template>
     <div id = '基地图' :style = 'div_css'>
-      <t-divider>
+      <t-divider class = 'divider'>
         Base View
       </t-divider>
       
@@ -71,7 +71,10 @@ li {
 a {
   color: #42b983;
 }
-
+.divider{
+  margin-top:0px;
+  margin-bottom:0px;
+}
 
 
 </style>
